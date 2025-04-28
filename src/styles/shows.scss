@@ -1,0 +1,42 @@
+@use 'variaveis';
+
+.shows{
+    padding:2vw 5.6vw;
+    min-height:50vw;
+
+    &__list{
+        padding-top:44px;
+        display:none;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:24px;
+        &__item{
+            img{
+               max-width: 100%;  
+               border-radius:4px;
+            }
+        }
+        &--is-active{
+            display:grid;
+        }
+    }
+    &__tab{
+        display:flex;
+        justify-content:center;
+
+        &__button{
+            font-size:20px;
+            color:variaveis.$corTextoSecundario;
+            background: none;
+            border:none;
+            border-bottom:5px solid transparent;
+            text-transform: uppercase;
+            margin:0 1vw;
+            padding-bottom:5px;
+            cursor:pointer;
+
+            &--is-active{
+            border-bottom:5px solid #fff;
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+.plans{
+    padding:5.6vw;
+
+    h2{
+        text-align:center;
+    }
+
+    p{
+        text-align: center;
+    }
+
+    &__list{
+        margin-top:50px;
+        display:flex;
+        justify-content:space-around;
+
+        &__item{
+
+            &:nth-child(2){
+                background-image:url(../imgs/images/fundo_combo_plus.png);
+                background-repeat:no-repeat;
+                background-size: contain;
+            }
+            max-width:380px;
+            width:100%;
+            padding:60px 44px 44px;
+            text-align:center;
+
+            img{
+                max-height:80px;
+            }
+
+            strong{
+                display:block;
+                margin-top: 24px;
+            }
+        }
+    }
+}
