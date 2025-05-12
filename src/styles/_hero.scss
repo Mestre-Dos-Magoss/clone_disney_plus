@@ -3,10 +3,15 @@
 .hero{
     padding:5.6vw;
     min-height: 80vh;
-    background-image: url(../imgs/images/hero_desktop.jpeg);
+    background-image: url(../../dist/imgs/images/hero_desktop.jpeg);
     background-size:cover;
     text-align:center;
 
+    .button{
+         margin-top:2vw;
+         margin-bottom:8px;
+    }
+    
     &__content{
         max-width: 640px;
 

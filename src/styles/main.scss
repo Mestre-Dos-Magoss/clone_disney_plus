@@ -2,6 +2,11 @@
 @use './variaveis.scss';
 @use 'shows';
 @use 'plans';
+@use 'available-devices';
+@use 'faq';
+@use 'footer';
+@use 'header';
+@use 'sass:color';
 
 @font-face {
     font-family: Avenir;
@@ -18,6 +23,7 @@
     margin:0;
     box-sizing:border-box;
     font-family:"Avenir", "sans-serif";
+    list-style:none;
 }
 
 @mixin text($fontsize:16px){
@@ -66,20 +72,85 @@ body{
 }
 
 .button{
-    display: block;
+    display: flex;
+    align-items:center;
+    justify-content:center;
     width:100%;
     height:60px;
-    margin-top:2vw;
+    padding:8px 14px;
+    border-radius:4px;
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario; 
     font-size:18px;
     text-transform:uppercase;
+    text-decoration:none;
+    letter-spacing:1px;
     color:variaveis.$corTextoSecundario;
-    background-color:#6421ff;
-    border-radius:4px;
-    border: none; 
-    margin-bottom:8px;
+    background-color:variaveis.$corDeFundoBotaoPrimario;
     cursor:pointer;
 
-    &:hover{
-        background-color:#763ff8; 
+            &:hover{
+            background-color: color.adjust(variaveis.$corDeFundoBotaoPrimario,$lightness:3%, $space:oklch);
+        }
+
+    &--secondary{
+        background-color:variaveis.$corDeFundoBotaoSecundario;
+        border-color:variaveis.$corDeFundoBotaoSecundario;
+
+        &:hover{
+            background-color: color.adjust(variaveis.$corDeFundoBotaoSecundario,$lightness:3%, $space:oklch);
+        }
     }
+
+    &--dark{
+        background-color:rgba(variaveis.$corDeFundoBotaoDark,0.7);
+        border-color:variaveis.$corTextoSecundario;
+
+        &:hover{
+            background-color:variaveis.$corTextoSecundario;
+            color:variaveis.$corDeFundo;
+        }
+    }
+}
+
+.image-text-section{
+    padding:5.6vw;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    img{
+        width:100%;
+    }
+
+    &__text-container{
+        padding:0 2vw;
+
+        h2{
+            margin-bottom:24px;
+        }
+    }
+
+    &--image-full-width{
+        display:block;
+        position:relative;
+
+        img{
+            width:100%;
+        }
+        &__text-container{
+            position:absolute;
+            top:0;
+            height:100%;
+            left:50%;
+            width: calc(50% - 5.6vw);
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items:flex-start;
+
+            h2{
+                margin-bottom:24px;
+            }
+        }
+    } 
 }
