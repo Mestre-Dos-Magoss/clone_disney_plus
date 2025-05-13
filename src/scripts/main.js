@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded",()=>{
 
     const hero = document.querySelector(".hero");
     const alturaHero = hero.clientHeight;
-
+ 
     window.addEventListener('scroll',()=>{
         const scroolMouse = (window.scrollY);
          
